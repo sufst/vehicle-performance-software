@@ -3,7 +3,7 @@ function out = LapSimSolver(GGV, track, veh, opts)
 %  Takes a Vehicle's GGV envelope and a track trajectory, and solves the 
 %  fastest possible lap, operating on surface of GGV.
 %  A quasi static lap sim solver using a forwards/reverse method.
-% test
+%
 %  Written by    : Will Doyle
 %  Last modified : 22-08-2023
 % 
