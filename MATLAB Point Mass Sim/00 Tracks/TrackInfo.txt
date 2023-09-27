@@ -1,0 +1,7 @@
+Info Regarding Sources used for Track Files. Last updated 21/08/2023
+
+------------------ FS Tracks ------------------
+FSUK_Accel		: 75 m straight line to model acceleration event at FSUK
+FSUK_Sprint_MP		: Generated from Assetto Corsa data of Michael P. driving FSUK Sprint circuit. Most Trusted as of 03/03/2021.
+FSUK_Sprint		: -
+FSUK_Endurance		: -
