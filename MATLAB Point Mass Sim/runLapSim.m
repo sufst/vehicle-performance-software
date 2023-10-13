@@ -26,12 +26,15 @@ addpath(genpath(pwd)); % add subfolders to path
 
 % Import vehicle data
 if nargin < 1 || isempty(veh)
-    veh = load('01 Vehicles/StagVIII.mat');
+    veh = load('01 Vehicles/StagX.mat');
     veh.Trq = 'Emrax 228 LC';
-    warning('No vehicle specified, using StagVIII.mat')
+    warning('No vehicle specified, using StagX.mat')
 elseif ischar(veh)
     veh = load(veh);
 end
+
+veh.GFLat = 0.6;
+veh.GFLong = 0.6;
 
 % Import track data
 % Will not work with skip pad as no minimum curvature is found
@@ -51,9 +54,6 @@ if nargin < 3 || ~isfield(options, 'PlotTrqCurve')
     options.PlotTrqCurve = 0;
 end
 
-% veh.Trq = 'Emrax 228 LC Peak';
-% veh.Trq = 'Emrax 228 LC Old'; % Stag 8 data
-
 %% Call main functions
 veh.Trq = createTrqCurve(veh,options.PlotTrqCurve);
 GGV = CreatePointMassGGV(veh,options.PlotGGV);
@@ -61,4 +61,5 @@ res = LapSimSolver(GGV,track,veh,options);
 
 %% Uncomment to calculate score for a certain event
 score = calcSprintScore(res.metrics.LapTime);
+disp(score)
 %score = calcAccelScore(res.metrics.LapTime);

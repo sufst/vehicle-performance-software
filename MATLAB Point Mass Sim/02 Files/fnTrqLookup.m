@@ -41,6 +41,7 @@ for i = 1:length(torque)
             speed_in_rpm = speed(i);
         end
         % Interpolate motor rpms using motor data
+        % Can use 'spline' instead of 'linear' to interpolate as a curve
         torque(i) = interp1(veh.Trq(:,1),veh.Trq(:,2),speed_in_rpm,'linear',veh.Trq(end,2));
     end
 end
