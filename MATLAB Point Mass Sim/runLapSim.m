@@ -33,12 +33,7 @@ elseif ischar(veh)
     veh = load(veh);
 end
 
-veh.GFLat = 0.6;
-veh.GFLong = 0.6;
-
 % Import track data
-% Will not work with skip pad as no minimum curvature is found
-% For accel want to use peak torque
 if nargin < 2 || isempty(track)
     track = load('00 Tracks/FSUK_Sprint_MP.mat');
     warning('No track specified, using FSUK_Sprint_MP.mat')
@@ -60,6 +55,6 @@ GGV = CreatePointMassGGV(veh,options.PlotGGV);
 res = LapSimSolver(GGV,track,veh,options);
 
 %% Uncomment to calculate score for a certain event
-score = calcSprintScore(res.metrics.LapTime);
-disp(score)
+%score = calcSprintScore(res.metrics.LapTime);
+%disp(score)
 %score = calcAccelScore(res.metrics.LapTime);
