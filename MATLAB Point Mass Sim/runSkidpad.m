@@ -12,7 +12,7 @@ function res = runSkidpad(veh,r)
 
 
 if nargin < 1 || isempty(veh)
-    veh = load('01 Vehicles/StagVIII.mat');
+    veh = load('01 Vehicles/StagX.mat');
     warning('No vehicle specified, using StagVIII.mat')
 end
 
